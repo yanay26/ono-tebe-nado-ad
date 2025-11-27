@@ -1,1 +1,344 @@
-/* место для вашего кода */
+/* Плавная прокрутка страницы */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Шапка сайта */
+.header {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  align-items: center; /* Выравнивание элементов по вертикали */
+  height: 293px;
+  padding: 92px 50px 96px 50px;
+}
+
+/* Ссылка в шапке */
+.header__link {
+  color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* Список ссылок в шапке */
+.header__links-list {
+  display: flex;
+  gap: 32px;
+}
+
+/* Элемент списка ссылок */
+.header__links-list-item {
+  list-style: circle;
+}
+
+/* Элемент списка без кружка */
+.header__links-list-item_no-bullit {
+  list-style: none;
+}
+
+/* Активная ссылка */
+.header__link_active {
+  text-decoration: none;
+}
+
+/* Изображение логотипа */
+.header__logo-image {
+  width: 148px;
+  height: 105px;
+}
+
+/* Адрес и контакты */
+.address {
+  width: 240px;
+  color: #000;
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 24.3px;
+}
+
+/* Выравнивание адреса в шапке */
+.header__address {
+  justify-self: end;
+}
+
+/* Элемент адреса с подчёркиванием */
+.address-item {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* Текст адреса без подчёркивания */
+.address-text {
+  text-decoration: none;
+}
+
+/* Полупрозрачный черный слой поверх cover */
+.overlay {
+  position: absolute; /* Абсолютное позиционирование относительно родителя */
+  inset: 0; /* Растягиваем на всю ширину и высоту родителя */
+  z-index: 0; /* Слой под остальными элементами */
+  opacity: 0.6;
+  background-color: #000;
+}
+
+/* Главный блок cover с фоновым изображением */
+.cover {
+  position: relative;
+  padding: 165px 20px 50px 50px;
+  background-image: url(../images/cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Заголовок на cover */
+.cover__title {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 115%;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Выравнивание текста */
+.aligned-text_center {
+  text-align: center; /* Выравнивание по центру */
+}
+.aligned-text_right {
+  text-align: right; /* Выравнивание по правому краю */
+}
+
+/* Блок описания на cover (текст + кнопка) */
+.cover__description {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 106px;
+  margin-right: 30px;
+}
+
+.cover__description_text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  word-spacing: 18px;
+}
+
+.bet-button {
+  border: 1px solid #fff;
+  padding: 12px 32px 12px 32px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+  background: none;
+}
+
+/* Блок "Лоты" */
+.lots {
+  margin: 180px 24px 120px 24px;
+}
+
+.lots__heading {
+  padding-bottom: 27px;
+  padding-left: 40px;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+/* Список карточек */
+.lots__card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+
+/* Элемент списка карточек */
+.lots__card-list-item {
+  min-height: 596px;
+  list-style: none;
+}
+
+.card-link {
+  height: 100%;
+  text-decoration: none;
+}
+
+/* Карточка */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 35px;
+  height: 100%;
+  padding: 48px 40px;
+}
+
+.card__title {
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-transform: uppercase;
+}
+
+.card__text {
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-decoration: none;
+}
+
+.card_type_film {
+  background-image: url(../images/card-lot-01.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card_type_book {
+  background-image: url(../images/card-lot-02.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card_type_picture {
+  background-image: url(../images/card-lot-03.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Ссылка "Посмотреть больше" */
+.lots__look-more-link {
+  display: block;
+  margin: 30px 0px 2px 40px;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* Блок "Об аукционе" */
+.about {
+  display: grid;
+  grid-template-columns: 334px 1fr;
+  gap: 25px;
+  height: 596px;
+  margin: 0 24px 0 24px;
+}
+
+.about__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.about__logo-image {
+  width: 148px;
+  height: 114px;
+}
+
+.about__column-text {
+  justify-self: start;
+  margin-top: 133px;
+  margin-bottom: 13px;
+}
+
+.about__column-logo {
+  margin-top: 35px;
+  margin-left: 47px;
+}
+
+.about__title {
+  margin-top: 3px;
+  margin-bottom: 100px;
+  font-weight: 700;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.about__text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+/* Первый абзац текста */
+.about__text-first {
+  margin-bottom: 24px;
+  margin-right: 10px
+}
+
+/* Подвал сайта */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 140px;
+  margin-top: 180px;
+  padding: 0 50px 82px 50px;
+}
+
+/* Список меню */
+.footer__menu-list {
+  text-align: center;
+  list-style: none;
+}
+
+.footer__menu-link {
+  color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.footer__menu-link_active {
+  text-decoration: none;
+}
+
+/* Список ссылок на соц сети */
+.footer__social-list {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+}
+
+/* Иконка соц сети в подвале */
+.footer__social-icon {
+  width: 48px;
+  height: 48px;
+}
